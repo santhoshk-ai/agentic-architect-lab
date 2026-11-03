@@ -1,0 +1,281 @@
+{
+  "summary": {
+    "config": "embed=mock:gemini-embedding-2 store=memory rerank=lexical",
+    "hit@3_before_rerank": "9/10",
+    "hit@3_after_rerank": "9/10",
+    "grounding_pass_rate": "10/10",
+    "ungrounded_probe_blocked": true,
+    "ungrounded_probe": {
+      "engine": "local-overlap",
+      "action": "INTERVENED",
+      "grounded": false,
+      "scores": {
+        "GROUNDING": 0.125
+      }
+    },
+    "done_when": false,
+    "note": "mock embeddings are lexical-only: run with real embeddings to claim the Done-when"
+  },
+  "rows": [
+    {
+      "q": "How early can I renew my residence permit?",
+      "expected": "faq-01",
+      "vector_top3": [
+        "faq-04",
+        "faq-01",
+        "faq-02"
+      ],
+      "rerank_top3": [
+        "faq-04",
+        "faq-01",
+        "faq-02"
+      ],
+      "hit_before": true,
+      "hit_after": true,
+      "answer": "Resident permits can be renewed online up to 30 days before expiry. [faq-01]",
+      "grounding": {
+        "engine": "local-overlap",
+        "action": "NONE",
+        "grounded": true,
+        "scores": {
+          "GROUNDING": 1.0
+        }
+      },
+      "latency_ms": 0
+    },
+    {
+      "q": "Can I bring my mother to live with me on my residency?",
+      "expected": "faq-02",
+      "vector_top3": [
+        "faq-08",
+        "faq-05",
+        "faq-11"
+      ],
+      "rerank_top3": [
+        "faq-08",
+        "faq-05",
+        "faq-11"
+      ],
+      "hit_before": false,
+      "hit_after": false,
+      "answer": "Bring the original licence, a translation and an eye test certificate. [faq-08]",
+      "grounding": {
+        "engine": "local-overlap",
+        "action": "NONE",
+        "grounded": true,
+        "scores": {
+          "GROUNDING": 1.0
+        }
+      },
+      "latency_ms": 0
+    },
+    {
+      "q": "I lost my ID card, what should I do?",
+      "expected": "faq-03",
+      "vector_top3": [
+        "faq-03",
+        "faq-07",
+        "faq-09"
+      ],
+      "rerank_top3": [
+        "faq-03",
+        "faq-09",
+        "faq-01"
+      ],
+      "hit_before": true,
+      "hit_after": true,
+      "answer": "Report a lost Nova ID card online within 7 days. [faq-03]",
+      "grounding": {
+        "engine": "local-overlap",
+        "action": "NONE",
+        "grounded": true,
+        "scores": {
+          "GROUNDING": 1.0
+        }
+      },
+      "latency_ms": 0
+    },
+    {
+      "q": "What happens if I stay after my permit expires?",
+      "expected": "faq-04",
+      "vector_top3": [
+        "faq-04",
+        "faq-10",
+        "faq-01"
+      ],
+      "rerank_top3": [
+        "faq-04",
+        "faq-10",
+        "faq-07"
+      ],
+      "hit_before": true,
+      "hit_after": true,
+      "answer": "If a resident permit expires, a grace period of 30 days applies. [faq-04]",
+      "grounding": {
+        "engine": "local-overlap",
+        "action": "NONE",
+        "grounded": true,
+        "scores": {
+          "GROUNDING": 1.0
+        }
+      },
+      "latency_ms": 0
+    },
+    {
+      "q": "How much does it cost to renew a driving licence?",
+      "expected": "faq-05",
+      "vector_top3": [
+        "faq-05",
+        "faq-08",
+        "faq-09"
+      ],
+      "rerank_top3": [
+        "faq-05",
+        "faq-08",
+        "faq-03"
+      ],
+      "hit_before": true,
+      "hit_after": true,
+      "answer": "Driving licences are renewed online or at any service centre. [faq-05]",
+      "grounding": {
+        "engine": "local-overlap",
+        "action": "NONE",
+        "grounded": true,
+        "scores": {
+          "GROUNDING": 1.0
+        }
+      },
+      "latency_ms": 0
+    },
+    {
+      "q": "I sold my car, how do I move it to the buyer's name?",
+      "expected": "faq-06",
+      "vector_top3": [
+        "faq-06",
+        "faq-02",
+        "faq-09"
+      ],
+      "rerank_top3": [
+        "faq-06",
+        "faq-02",
+        "faq-09"
+      ],
+      "hit_before": true,
+      "hit_after": true,
+      "answer": "To transfer vehicle ownership, both buyer and seller sign the transfer request in the app. [faq-06]",
+      "grounding": {
+        "engine": "local-overlap",
+        "action": "NONE",
+        "grounded": true,
+        "scores": {
+          "GROUNDING": 1.0
+        }
+      },
+      "latency_ms": 0
+    },
+    {
+      "q": "Is there a discount for paying a parking ticket early?",
+      "expected": "faq-07",
+      "vector_top3": [
+        "faq-11",
+        "faq-07",
+        "faq-09"
+      ],
+      "rerank_top3": [
+        "faq-07",
+        "faq-11",
+        "faq-09"
+      ],
+      "hit_before": true,
+      "hit_after": true,
+      "answer": "Traffic and parking fines can be paid in the Nova City app, at kiosks or at service centres. [faq-07]",
+      "grounding": {
+        "engine": "local-overlap",
+        "action": "NONE",
+        "grounded": true,
+        "scores": {
+          "GROUNDING": 1.0
+        }
+      },
+      "latency_ms": 0
+    },
+    {
+      "q": "Can I swap my licence from abroad without a driving test?",
+      "expected": "faq-08",
+      "vector_top3": [
+        "faq-08",
+        "faq-05",
+        "faq-11"
+      ],
+      "rerank_top3": [
+        "faq-05",
+        "faq-08",
+        "faq-11"
+      ],
+      "hit_before": true,
+      "hit_after": true,
+      "answer": "Holders of licences from approved countries can convert to a Nova City licence without a road test. [faq-08]",
+      "grounding": {
+        "engine": "local-overlap",
+        "action": "NONE",
+        "grounded": true,
+        "scores": {
+          "GROUNDING": 1.0
+        }
+      },
+      "latency_ms": 0
+    },
+    {
+      "q": "How many books can I borrow?",
+      "expected": "faq-09",
+      "vector_top3": [
+        "faq-09",
+        "faq-10",
+        "faq-01"
+      ],
+      "rerank_top3": [
+        "faq-09",
+        "faq-10",
+        "faq-01"
+      ],
+      "hit_before": true,
+      "hit_after": true,
+      "answer": "Members can borrow up to 6 books for 3 weeks. [faq-09]",
+      "grounding": {
+        "engine": "local-overlap",
+        "action": "NONE",
+        "grounded": true,
+        "scores": {
+          "GROUNDING": 1.0
+        }
+      },
+      "latency_ms": 0
+    },
+    {
+      "q": "When is the service centre open on weekends?",
+      "expected": "faq-11",
+      "vector_top3": [
+        "faq-11",
+        "faq-05",
+        "faq-07"
+      ],
+      "rerank_top3": [
+        "faq-11",
+        "faq-05",
+        "faq-07"
+      ],
+      "hit_before": true,
+      "hit_after": true,
+      "answer": "Service centres open Monday to Friday from 7:30 to 15:30. [faq-11]",
+      "grounding": {
+        "engine": "local-overlap",
+        "action": "NONE",
+        "grounded": true,
+        "scores": {
+          "GROUNDING": 1.0
+        }
+      },
+      "latency_ms": 0
+    }
+  ]
+}

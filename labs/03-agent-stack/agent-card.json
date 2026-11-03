@@ -1,0 +1,48 @@
+{
+  "name": "Nova City Services Agent",
+  "description": "Answers Nova City residency, driving and general service questions with cited sources, and submits applications after human approval.",
+  "supportedInterfaces": [
+    {
+      "url": "http://127.0.0.1:9999/a2a",
+      "protocolBinding": "JSONRPC",
+      "protocolVersion": "1.0"
+    }
+  ],
+  "version": "0.1.0",
+  "capabilities": {
+    "streaming": false
+  },
+  "defaultInputModes": [
+    "text/plain"
+  ],
+  "defaultOutputModes": [
+    "text/plain"
+  ],
+  "skills": [
+    {
+      "id": "answer-service-question",
+      "name": "Answer service question",
+      "description": "Grounded, cited answers from the Nova City FAQ knowledge base.",
+      "tags": [
+        "faq",
+        "rag",
+        "government-services"
+      ],
+      "examples": [
+        "How do I renew my driving licence?"
+      ]
+    },
+    {
+      "id": "submit-application",
+      "name": "Submit application (human approval)",
+      "description": "Prepares a submission and pauses for approval (input-required).",
+      "tags": [
+        "action",
+        "human-in-the-loop"
+      ],
+      "examples": [
+        "Please renew my driving licence now, ref LAB-001"
+      ]
+    }
+  ]
+}
