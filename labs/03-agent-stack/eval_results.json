@@ -1,125 +1,129 @@
 {
   "summary": {
-    "config": "embed=mock:gemini-embedding-2 store=memory rerank=lexical",
-    "hit@3_before_rerank": "9/10",
-    "hit@3_after_rerank": "9/10",
-    "grounding_pass_rate": "10/10",
+    "config": "embed=gemini:gemini-embedding-2 store=memory rerank=bedrock",
+    "hit@3_before_rerank": "10/10",
+    "hit@3_after_rerank": "10/10",
+    "grounding_pass_rate": "9/10",
     "ungrounded_probe_blocked": true,
     "ungrounded_probe": {
-      "engine": "local-overlap",
-      "action": "INTERVENED",
+      "engine": "bedrock-guardrail",
+      "action": "GUARDRAIL_INTERVENED",
       "grounded": false,
       "scores": {
-        "GROUNDING": 0.125
+        "GROUNDING": 0.0,
+        "RELEVANCE": 0.61
       }
     },
-    "done_when": false,
-    "note": "mock embeddings are lexical-only: run with real embeddings to claim the Done-when"
+    "done_when": true
   },
   "rows": [
     {
       "q": "How early can I renew my residence permit?",
       "expected": "faq-01",
       "vector_top3": [
-        "faq-04",
         "faq-01",
-        "faq-02"
+        "faq-04",
+        "faq-05"
       ],
       "rerank_top3": [
-        "faq-04",
         "faq-01",
-        "faq-02"
+        "faq-04",
+        "faq-05"
       ],
       "hit_before": true,
       "hit_after": true,
-      "answer": "Resident permits can be renewed online up to 30 days before expiry. [faq-01]",
+      "answer": "You can renew your resident permit online up to 30 days before its expiry [faq-01]. You will need a valid passport, a recent photo, and your Nova ID for the process [faq-01]. The processing time for the renewal is 3 working days [faq-01].",
       "grounding": {
-        "engine": "local-overlap",
+        "engine": "bedrock-guardrail",
         "action": "NONE",
         "grounded": true,
         "scores": {
-          "GROUNDING": 1.0
+          "GROUNDING": 1.0,
+          "RELEVANCE": 1.0
         }
       },
-      "latency_ms": 0
+      "latency_ms": 6201
     },
     {
       "q": "Can I bring my mother to live with me on my residency?",
       "expected": "faq-02",
       "vector_top3": [
-        "faq-08",
-        "faq-05",
-        "faq-11"
+        "faq-02",
+        "faq-01",
+        "faq-04"
       ],
       "rerank_top3": [
-        "faq-08",
-        "faq-05",
-        "faq-11"
+        "faq-02",
+        "faq-01",
+        "faq-04"
       ],
-      "hit_before": false,
-      "hit_after": false,
-      "answer": "Bring the original licence, a translation and an eye test certificate. [faq-08]",
+      "hit_before": true,
+      "hit_after": true,
+      "answer": "<faq-02] Yes, you can sponsor your mother if you earn at least 8,000 NCD per month. You need to submit the family sponsorship form along with a tenancy contract and proof of your salary. This process allows you to bring your mother to live with you under your residency.",
       "grounding": {
-        "engine": "local-overlap",
+        "engine": "bedrock-guardrail",
         "action": "NONE",
         "grounded": true,
         "scores": {
-          "GROUNDING": 1.0
+          "GROUNDING": 0.83,
+          "RELEVANCE": 1.0
         }
       },
-      "latency_ms": 0
+      "latency_ms": 5979
     },
     {
       "q": "I lost my ID card, what should I do?",
       "expected": "faq-03",
       "vector_top3": [
         "faq-03",
-        "faq-07",
+        "faq-01",
         "faq-09"
       ],
       "rerank_top3": [
         "faq-03",
-        "faq-09",
-        "faq-01"
+        "faq-01",
+        "faq-05"
       ],
       "hit_before": true,
       "hit_after": true,
-      "answer": "Report a lost Nova ID card online within 7 days. [faq-03]",
+      "answer": "You should report your lost Nova ID card online within 7 days [faq-03]. A replacement card will cost 150 NCD and will be delivered by courier within 5 working days [faq-03].",
       "grounding": {
-        "engine": "local-overlap",
+        "engine": "bedrock-guardrail",
         "action": "NONE",
         "grounded": true,
         "scores": {
-          "GROUNDING": 1.0
+          "GROUNDING": 1.0,
+          "RELEVANCE": 1.0
         }
       },
-      "latency_ms": 0
+      "latency_ms": 5549
     },
     {
       "q": "What happens if I stay after my permit expires?",
       "expected": "faq-04",
       "vector_top3": [
         "faq-04",
-        "faq-10",
-        "faq-01"
+        "faq-01",
+        "faq-03"
       ],
       "rerank_top3": [
         "faq-04",
-        "faq-10",
-        "faq-07"
+        "faq-01",
+        "faq-05"
       ],
       "hit_before": true,
       "hit_after": true,
-      "answer": "If a resident permit expires, a grace period of 30 days applies. [faq-04]",
+      "answer": "If your resident permit expires, you have a grace period of 30 days [faq-04]. After this period, a daily overstay fee of 50 NCD will be charged until the permit is renewed [faq-04]. You can renew your permit online up to 30 days before expiry [faq-01].",
       "grounding": {
-        "engine": "local-overlap",
+        "engine": "bedrock-guardrail",
         "action": "NONE",
         "grounded": true,
         "scores": {
-          "GROUNDING": 1.0
+          "GROUNDING": 0.89,
+          "RELEVANCE": 1.0
         }
       },
-      "latency_ms": 0
+      "latency_ms": 8391
     },
     {
       "q": "How much does it cost to renew a driving licence?",
@@ -127,77 +131,80 @@
       "vector_top3": [
         "faq-05",
         "faq-08",
-        "faq-09"
+        "faq-01"
       ],
       "rerank_top3": [
         "faq-05",
-        "faq-08",
-        "faq-03"
+        "faq-04",
+        "faq-01"
       ],
       "hit_before": true,
       "hit_after": true,
-      "answer": "Driving licences are renewed online or at any service centre. [faq-05]",
+      "answer": "The renewal fee for a driving licence is 120 NCD, and an eye test certificate from an approved optician is required [faq-05]. You can renew your driving licence either online or at any service centre [faq-05].",
       "grounding": {
-        "engine": "local-overlap",
+        "engine": "bedrock-guardrail",
         "action": "NONE",
         "grounded": true,
         "scores": {
-          "GROUNDING": 1.0
+          "GROUNDING": 1.0,
+          "RELEVANCE": 1.0
         }
       },
-      "latency_ms": 0
+      "latency_ms": 5198
     },
     {
       "q": "I sold my car, how do I move it to the buyer's name?",
       "expected": "faq-06",
       "vector_top3": [
         "faq-06",
-        "faq-02",
-        "faq-09"
+        "faq-08",
+        "faq-03"
       ],
       "rerank_top3": [
         "faq-06",
-        "faq-02",
-        "faq-09"
+        "faq-03",
+        "faq-08"
       ],
       "hit_before": true,
       "hit_after": true,
-      "answer": "To transfer vehicle ownership, both buyer and seller sign the transfer request in the app. [faq-06]",
+      "answer": "To transfer vehicle ownership, both you (seller) and the buyer must sign the transfer request in the app [faq-06]. The vehicle must pass inspection and have no unpaid fines [faq-06]. Ensure all requirements are met before initiating the transfer.",
       "grounding": {
-        "engine": "local-overlap",
-        "action": "NONE",
-        "grounded": true,
+        "engine": "bedrock-guardrail",
+        "action": "GUARDRAIL_INTERVENED",
+        "grounded": false,
         "scores": {
-          "GROUNDING": 1.0
+          "GROUNDING": 0.17,
+          "RELEVANCE": 1.0
         }
       },
-      "latency_ms": 0
+      "latency_ms": 4169
     },
     {
       "q": "Is there a discount for paying a parking ticket early?",
       "expected": "faq-07",
       "vector_top3": [
-        "faq-11",
         "faq-07",
-        "faq-09"
+        "faq-04",
+        "faq-03"
       ],
       "rerank_top3": [
         "faq-07",
         "faq-11",
-        "faq-09"
+        "faq-04"
       ],
       "hit_before": true,
       "hit_after": true,
-      "answer": "Traffic and parking fines can be paid in the Nova City app, at kiosks or at service centres. [faq-07]",
+      "answer": "Yes, there is a 25 percent discount for paying a traffic and parking fine within 30 days [faq-07]. You can pay through the Nova City app, at kiosks, or at service centers [faq-07]. Service centers are open Monday to Friday from 7:30 to 15:30, with the central one also open on Saturdays from 8:00 to 12:00 [faq-11].",
       "grounding": {
-        "engine": "local-overlap",
+        "engine": "bedrock-guardrail",
         "action": "NONE",
         "grounded": true,
         "scores": {
-          "GROUNDING": 1.0
+          "GROUNDING": 1.0,
+          "RELEVANCE": 1.0
         }
       },
-      "latency_ms": 0
+      "latency_ms": 4211
     },
     {
       "q": "Can I swap my licence from abroad without a driving test?",
@@ -205,25 +212,26 @@
       "vector_top3": [
         "faq-08",
         "faq-05",
-        "faq-11"
+        "faq-01"
       ],
       "rerank_top3": [
-        "faq-05",
         "faq-08",
-        "faq-11"
+        "faq-05",
+        "faq-01"
       ],
       "hit_before": true,
       "hit_after": true,
-      "answer": "Holders of licences from approved countries can convert to a Nova City licence without a road test. [faq-08]",
+      "answer": "Yes, holders of licenses from approved countries can convert to a Nova City license without a road test [faq-08]. You need to bring the original license, a translation, and an eye test certificate [faq-08]. There is no mention of needing to be in Nova City to perform this conversion.",
       "grounding": {
-        "engine": "local-overlap",
+        "engine": "bedrock-guardrail",
         "action": "NONE",
         "grounded": true,
         "scores": {
-          "GROUNDING": 1.0
+          "GROUNDING": 0.95,
+          "RELEVANCE": 1.0
         }
       },
-      "latency_ms": 0
+      "latency_ms": 9262
     },
     {
       "q": "How many books can I borrow?",
@@ -231,25 +239,26 @@
       "vector_top3": [
         "faq-09",
         "faq-10",
-        "faq-01"
+        "faq-03"
       ],
       "rerank_top3": [
         "faq-09",
-        "faq-10",
-        "faq-01"
+        "faq-02",
+        "faq-11"
       ],
       "hit_before": true,
       "hit_after": true,
-      "answer": "Members can borrow up to 6 books for 3 weeks. [faq-09]",
+      "answer": "Members can borrow up to 6 books for 3 weeks [faq-09]. Library cards are free for residents and can be applied for online or at any branch with your Nova ID [faq-09].",
       "grounding": {
-        "engine": "local-overlap",
+        "engine": "bedrock-guardrail",
         "action": "NONE",
         "grounded": true,
         "scores": {
-          "GROUNDING": 1.0
+          "GROUNDING": 1.0,
+          "RELEVANCE": 1.0
         }
       },
-      "latency_ms": 0
+      "latency_ms": 5630
     },
     {
       "q": "When is the service centre open on weekends?",
@@ -257,25 +266,26 @@
       "vector_top3": [
         "faq-11",
         "faq-05",
-        "faq-07"
+        "faq-12"
       ],
       "rerank_top3": [
         "faq-11",
-        "faq-05",
-        "faq-07"
+        "faq-07",
+        "faq-05"
       ],
       "hit_before": true,
       "hit_after": true,
-      "answer": "Service centres open Monday to Friday from 7:30 to 15:30. [faq-11]",
+      "answer": "The central service centre opens on Saturday from 8:00 to 12:00 [faq-11].",
       "grounding": {
-        "engine": "local-overlap",
+        "engine": "bedrock-guardrail",
         "action": "NONE",
         "grounded": true,
         "scores": {
-          "GROUNDING": 1.0
+          "GROUNDING": 1.0,
+          "RELEVANCE": 1.0
         }
       },
-      "latency_ms": 0
+      "latency_ms": 5656
     }
   ]
 }
