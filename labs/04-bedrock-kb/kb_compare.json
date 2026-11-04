@@ -1,0 +1,227 @@
+{
+  "strategy": "fixed",
+  "k": 5,
+  "gen_model": "us.amazon.nova-2-lite-v1:0",
+  "rows": [
+    {
+      "q": "How early can I renew my residence permit and what do I need?",
+      "out_of_corpus": false,
+      "retrieve_top3": [
+        {
+          "source": "residency-permits.md",
+          "score": 0.792
+        },
+        {
+          "source": "residency-permits.md",
+          "score": 0.749
+        },
+        {
+          "source": "residency-permits.md",
+          "score": 0.728
+        }
+      ],
+      "retrieve_hit@3": true,
+      "retrieve_ms": 1460,
+      "answer": "You can renew your residence permit online up to 30 days before it expires, using the same portal where you originally applied. To renew, you will need the following documents:\n\n- A passport valid for at least six months\n- A recent photograph on a white background\n- A valid Nova ID\n- Proof of health insurance that covers the full permit period.\n\nRenewal applications are processed in 3 working days when all documents are complete, and the renewal fee is the same as the fee for a first permit.",
+      "citations": [
+        {
+          "source": "residency-permits.md",
+          "claim": "You can renew your residence permit online up to 30 days before it expires, using the same"
+        },
+        {
+          "source": "residency-permits.md",
+          "claim": "Renewal applications are processed in 3 working days when all documents are complete, and "
+        }
+      ],
+      "rag_ms": 2022
+    },
+    {
+      "q": "What salary do I need to sponsor my parents?",
+      "out_of_corpus": false,
+      "retrieve_top3": [
+        {
+          "source": "family-sponsorship.md",
+          "score": 0.778
+        },
+        {
+          "source": "family-sponsorship.md",
+          "score": 0.725
+        },
+        {
+          "source": "family-sponsorship.md",
+          "score": 0.648
+        }
+      ],
+      "retrieve_hit@3": true,
+      "retrieve_ms": 709,
+      "answer": "To sponsor your parents in Nova City, you need to meet specific salary requirements and conditions :\n\n- **Salary Requirement**: \n    - You must show a **minimum monthly salary of 18,000 NCD** to sponsor your parents, or **15,000 NCD plus accommodation** with at least two bedrooms. \n- **Additional Conditions**: \n    - You must demonstrate that both parents depend on you and that no other family member in their home country can support them. \n    - Both parents must be sponsored together, unless one parent has died or the parents are divorced. \n    - You must also pay a **refundable security deposit of 5,000 NCD for each parent**, which is returned when their permit is cancelled and they leave Nova City. \n    - Each parent needs **health insurance** with a minimum annual cover of **150,000 NCD**. \n\nEnsure you meet these criteria before applying to sponsor your parents.",
+      "citations": [
+        {
+          "source": "family-sponsorship.md",
+          "claim": "To sponsor your parents in Nova City, you need to meet specific salary requirements and co"
+        },
+        {
+          "source": "family-sponsorship.md",
+          "claim": "To sponsor your parents in Nova City, you need to meet specific salary requirements and co"
+        },
+        {
+          "source": "family-sponsorship.md",
+          "claim": ":\n\n- **Salary Requirement**: \n    - You must show a **minimum monthly salary of 18,000 NCD"
+        },
+        {
+          "source": "family-sponsorship.md",
+          "claim": "- **Additional Conditions**: \n    - You must demonstrate that both parents depend on you a"
+        },
+        {
+          "source": "family-sponsorship.md",
+          "claim": "- **Additional Conditions**: \n    - You must demonstrate that both parents depend on you a"
+        },
+        {
+          "source": "family-sponsorship.md",
+          "claim": "- Both parents must be sponsored together, unless one parent has died or the parents are d"
+        },
+        {
+          "source": "family-sponsorship.md",
+          "claim": "- You must also pay a **refundable security deposit of 5,000 NCD for each parent**, which "
+        },
+        {
+          "source": "family-sponsorship.md",
+          "claim": "- Each parent needs **health insurance** with a minimum annual cover of **150,000 NCD**"
+        },
+        {
+          "source": "family-sponsorship.md",
+          "claim": "Ensure you meet these criteria before applying to sponsor your parents."
+        },
+        {
+          "source": "family-sponsorship.md",
+          "claim": "Ensure you meet these criteria before applying to sponsor your parents."
+        }
+      ],
+      "rag_ms": 2142
+    },
+    {
+      "q": "How do I dispute a parking fine?",
+      "out_of_corpus": false,
+      "retrieve_top3": [
+        {
+          "source": "vehicles-and-fines.md",
+          "score": 0.698
+        },
+        {
+          "source": "vehicles-and-fines.md",
+          "score": 0.631
+        },
+        {
+          "source": "residency-permits.md",
+          "score": 0.616
+        }
+      ],
+      "retrieve_hit@3": true,
+      "retrieve_ms": 1689,
+      "answer": "To dispute a parking fine in Nova City, you can follow these steps based on the provided information:\n\n1. **Timeframe**: You have **30 days** from the date of the fine to submit your dispute.\n2. **Method**: You can dispute the fine **through the Nova Services app**.\n3. **Required Information**: When submitting your dispute, you will need to upload either **a photograph** or a **payment receipt** as evidence to support your case.\n4. **Review Process**: Your dispute will be reviewed within **7 working days**.\n\nMake sure to act within the 30-day window to ensure your dispute is considered.",
+      "citations": [
+        {
+          "source": "vehicles-and-fines.md",
+          "claim": "To dispute a parking fine in Nova City, you can follow these steps based on the provided i"
+        },
+        {
+          "source": "vehicles-and-fines.md",
+          "claim": "To dispute a parking fine in Nova City, you can follow these steps based on the provided i"
+        },
+        {
+          "source": "vehicles-and-fines.md",
+          "claim": "2. **Method**: You can dispute the fine **through the Nova Services app**"
+        },
+        {
+          "source": "vehicles-and-fines.md",
+          "claim": "2. **Method**: You can dispute the fine **through the Nova Services app**"
+        },
+        {
+          "source": "vehicles-and-fines.md",
+          "claim": "3. **Required Information**: When submitting your dispute, you will need to upload either "
+        },
+        {
+          "source": "vehicles-and-fines.md",
+          "claim": "4. **Review Process**: Your dispute will be reviewed within **7 working days**"
+        },
+        {
+          "source": "vehicles-and-fines.md",
+          "claim": "Make sure to act within the 30-day window to ensure your dispute is considered."
+        },
+        {
+          "source": "vehicles-and-fines.md",
+          "claim": "Make sure to act within the 30-day window to ensure your dispute is considered."
+        }
+      ],
+      "rag_ms": 1783
+    },
+    {
+      "q": "Do electric cars pay the vehicle registration fee?",
+      "out_of_corpus": false,
+      "retrieve_top3": [
+        {
+          "source": "vehicles-and-fines.md",
+          "score": 0.72
+        },
+        {
+          "source": "vehicles-and-fines.md",
+          "score": 0.627
+        },
+        {
+          "source": "driving-licence.md",
+          "score": 0.602
+        }
+      ],
+      "retrieve_hit@3": true,
+      "retrieve_ms": 669,
+      "answer": " Electric vehicles are exempt from the registration fee until December 31, 2027, according to the Nova City Services Vehicle Registration and Traffic Fines Circular VF-2026-03. \n\nThis exemption applies to all electric vehicles registered in Nova City, regardless of whether they are light or heavy vehicles. After December 31, 2027, electric vehicles will need to pay the standard registration fees like other vehicles.",
+      "citations": [
+        {
+          "source": "vehicles-and-fines.md",
+          "claim": ""
+        },
+        {
+          "source": "vehicles-and-fines.md",
+          "claim": "Electric vehicles are exempt from the registration fee until December 31, 2027, according "
+        }
+      ],
+      "rag_ms": 1669
+    },
+    {
+      "q": "How much is a fishing licence in Nova City?",
+      "out_of_corpus": true,
+      "retrieve_top3": [
+        {
+          "source": "business-licensing.md",
+          "score": 0.773
+        },
+        {
+          "source": "driving-licence.md",
+          "score": 0.727
+        },
+        {
+          "source": "vehicles-and-fines.md",
+          "score": 0.727
+        }
+      ],
+      "retrieve_hit@3": null,
+      "retrieve_ms": 611,
+      "answer": "The search results do not mention anything about fishing licenses in Nova City. The provided information covers business licenses, driving licenses, vehicle registration, residence permits, and traffic fines, but there is no specific data regarding the cost or requirements for a fishing license.\n\nTherefore, the information available does not provide details on fishing licenses.",
+      "citations": [],
+      "rag_ms": 1903
+    }
+  ],
+  "filter_demo": {
+    "q": "How early can I renew?",
+    "no_filter": [
+      "residency-permits.md",
+      "business-licensing.md",
+      "driving-licence.md"
+    ],
+    "service=driving": [
+      "driving-licence.md",
+      "vehicles-and-fines.md",
+      "driving-licence.md"
+    ]
+  }
+}

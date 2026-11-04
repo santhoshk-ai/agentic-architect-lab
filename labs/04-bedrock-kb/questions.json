@@ -1,0 +1,52 @@
+[
+  {
+    "q": "How early can I renew my residence permit?",
+    "expect": "up to 30 days before it expires",
+    "doc": "residency-permits.md"
+  },
+  {
+    "q": "How early can I renew my driving licence?",
+    "expect": "up to 90 days before it expires",
+    "doc": "driving-licence.md"
+  },
+  {
+    "q": "What salary do I need to sponsor my mother and father?",
+    "expect": "18,000 NCD",
+    "doc": "family-sponsorship.md"
+  },
+  {
+    "q": "How much is the deposit for bringing my parents to live with me?",
+    "expect": "refundable security deposit of 5,000 NCD",
+    "doc": "family-sponsorship.md"
+  },
+  {
+    "q": "What is the daily fine once the grace period for my expired residence permit ends?",
+    "expect": "25 NCD for each day",
+    "doc": "residency-permits.md"
+  },
+  {
+    "q": "Is there a discount if I pay a traffic fine early?",
+    "expect": "25% discount applies",
+    "doc": "vehicles-and-fines.md"
+  },
+  {
+    "q": "How much does it cost to transfer a used car I bought?",
+    "expect": "The transfer fee is 350 NCD",
+    "doc": "vehicles-and-fines.md"
+  },
+  {
+    "q": "I write software from my apartment with no clients visiting. What does that licence cost per year?",
+    "expect": "home-based licences 750 NCD per year",
+    "doc": "business-licensing.md"
+  },
+  {
+    "q": "How long does a refund take if my application is rejected?",
+    "expect": "within 14 working days",
+    "doc": "nova-id-and-payments.md"
+  },
+  {
+    "q": "Which sign-in level do I need to renew my permit?",
+    "expect": "Level 2 is required",
+    "doc": "nova-id-and-payments.md"
+  }
+]

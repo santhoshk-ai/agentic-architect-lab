@@ -1,0 +1,488 @@
+{
+  "k": 3,
+  "summary": [
+    {
+      "strategy": "fixed",
+      "hit@3": "9/10",
+      "doc@3": "9/10",
+      "avg_chunk_words": 191,
+      "results_returned": "30/30",
+      "avg_retrieve_ms": 747,
+      "ingest_seconds": 22
+    },
+    {
+      "strategy": "semantic",
+      "hit@3": "9/10",
+      "doc@3": "9/10",
+      "avg_chunk_words": 150,
+      "results_returned": "30/30",
+      "avg_retrieve_ms": 611,
+      "ingest_seconds": 32
+    },
+    {
+      "strategy": "hierarchical",
+      "hit@3": "9/10",
+      "doc@3": "9/10",
+      "avg_chunk_words": 430,
+      "results_returned": "17/30",
+      "avg_retrieve_ms": 630,
+      "ingest_seconds": 22
+    }
+  ],
+  "rows": [
+    {
+      "strategy": "fixed",
+      "q": "How early can I renew my residence permit?",
+      "phrase_rank": 2,
+      "doc_rank": 1,
+      "sources": [
+        "residency-permits.md",
+        "residency-permits.md",
+        "residency-permits.md"
+      ],
+      "scores": [
+        0.802,
+        0.738,
+        0.699
+      ]
+    },
+    {
+      "strategy": "fixed",
+      "q": "How early can I renew my driving licence?",
+      "phrase_rank": 3,
+      "doc_rank": 2,
+      "sources": [
+        "business-licensing.md",
+        "driving-licence.md",
+        "driving-licence.md"
+      ],
+      "scores": [
+        0.682,
+        0.68,
+        0.678
+      ]
+    },
+    {
+      "strategy": "fixed",
+      "q": "What salary do I need to sponsor my mother and father?",
+      "phrase_rank": 1,
+      "doc_rank": 1,
+      "sources": [
+        "family-sponsorship.md",
+        "family-sponsorship.md",
+        "family-sponsorship.md"
+      ],
+      "scores": [
+        0.757,
+        0.715,
+        0.637
+      ]
+    },
+    {
+      "strategy": "fixed",
+      "q": "How much is the deposit for bringing my parents to live with me?",
+      "phrase_rank": 1,
+      "doc_rank": 1,
+      "sources": [
+        "family-sponsorship.md",
+        "family-sponsorship.md",
+        "residency-permits.md"
+      ],
+      "scores": [
+        0.606,
+        0.567,
+        0.561
+      ]
+    },
+    {
+      "strategy": "fixed",
+      "q": "What is the daily fine once the grace period for my expired residence permit ends?",
+      "phrase_rank": 1,
+      "doc_rank": 1,
+      "sources": [
+        "residency-permits.md",
+        "residency-permits.md",
+        "business-licensing.md"
+      ],
+      "scores": [
+        0.768,
+        0.707,
+        0.642
+      ]
+    },
+    {
+      "strategy": "fixed",
+      "q": "Is there a discount if I pay a traffic fine early?",
+      "phrase_rank": 1,
+      "doc_rank": 1,
+      "sources": [
+        "vehicles-and-fines.md",
+        "vehicles-and-fines.md",
+        "residency-permits.md"
+      ],
+      "scores": [
+        0.716,
+        0.655,
+        0.593
+      ]
+    },
+    {
+      "strategy": "fixed",
+      "q": "How much does it cost to transfer a used car I bought?",
+      "phrase_rank": 1,
+      "doc_rank": 1,
+      "sources": [
+        "vehicles-and-fines.md",
+        "vehicles-and-fines.md",
+        "driving-licence.md"
+      ],
+      "scores": [
+        0.622,
+        0.6,
+        0.54
+      ]
+    },
+    {
+      "strategy": "fixed",
+      "q": "I write software from my apartment with no clients visiting. What does that licence cost per year?",
+      "phrase_rank": 1,
+      "doc_rank": 1,
+      "sources": [
+        "business-licensing.md",
+        "driving-licence.md",
+        "business-licensing.md"
+      ],
+      "scores": [
+        0.673,
+        0.628,
+        0.599
+      ]
+    },
+    {
+      "strategy": "fixed",
+      "q": "How long does a refund take if my application is rejected?",
+      "phrase_rank": 2,
+      "doc_rank": 2,
+      "sources": [
+        "residency-permits.md",
+        "nova-id-and-payments.md",
+        "residency-permits.md"
+      ],
+      "scores": [
+        0.59,
+        0.579,
+        0.572
+      ]
+    },
+    {
+      "strategy": "fixed",
+      "q": "Which sign-in level do I need to renew my permit?",
+      "phrase_rank": null,
+      "doc_rank": null,
+      "sources": [
+        "residency-permits.md",
+        "residency-permits.md",
+        "residency-permits.md"
+      ],
+      "scores": [
+        0.675,
+        0.661,
+        0.637
+      ]
+    },
+    {
+      "strategy": "semantic",
+      "q": "How early can I renew my residence permit?",
+      "phrase_rank": 1,
+      "doc_rank": 1,
+      "sources": [
+        "residency-permits.md",
+        "residency-permits.md",
+        "residency-permits.md"
+      ],
+      "scores": [
+        0.72,
+        0.698,
+        0.698
+      ]
+    },
+    {
+      "strategy": "semantic",
+      "q": "How early can I renew my driving licence?",
+      "phrase_rank": 1,
+      "doc_rank": 1,
+      "sources": [
+        "driving-licence.md",
+        "vehicles-and-fines.md",
+        "business-licensing.md"
+      ],
+      "scores": [
+        0.723,
+        0.667,
+        0.648
+      ]
+    },
+    {
+      "strategy": "semantic",
+      "q": "What salary do I need to sponsor my mother and father?",
+      "phrase_rank": 1,
+      "doc_rank": 1,
+      "sources": [
+        "family-sponsorship.md",
+        "family-sponsorship.md",
+        "family-sponsorship.md"
+      ],
+      "scores": [
+        0.749,
+        0.705,
+        0.653
+      ]
+    },
+    {
+      "strategy": "semantic",
+      "q": "How much is the deposit for bringing my parents to live with me?",
+      "phrase_rank": 1,
+      "doc_rank": 1,
+      "sources": [
+        "family-sponsorship.md",
+        "family-sponsorship.md",
+        "residency-permits.md"
+      ],
+      "scores": [
+        0.597,
+        0.582,
+        0.57
+      ]
+    },
+    {
+      "strategy": "semantic",
+      "q": "What is the daily fine once the grace period for my expired residence permit ends?",
+      "phrase_rank": 1,
+      "doc_rank": 1,
+      "sources": [
+        "residency-permits.md",
+        "vehicles-and-fines.md",
+        "residency-permits.md"
+      ],
+      "scores": [
+        0.725,
+        0.705,
+        0.698
+      ]
+    },
+    {
+      "strategy": "semantic",
+      "q": "Is there a discount if I pay a traffic fine early?",
+      "phrase_rank": 2,
+      "doc_rank": 1,
+      "sources": [
+        "vehicles-and-fines.md",
+        "vehicles-and-fines.md",
+        "residency-permits.md"
+      ],
+      "scores": [
+        0.775,
+        0.67,
+        0.63
+      ]
+    },
+    {
+      "strategy": "semantic",
+      "q": "How much does it cost to transfer a used car I bought?",
+      "phrase_rank": 1,
+      "doc_rank": 1,
+      "sources": [
+        "vehicles-and-fines.md",
+        "vehicles-and-fines.md",
+        "driving-licence.md"
+      ],
+      "scores": [
+        0.617,
+        0.544,
+        0.541
+      ]
+    },
+    {
+      "strategy": "semantic",
+      "q": "I write software from my apartment with no clients visiting. What does that licence cost per year?",
+      "phrase_rank": 1,
+      "doc_rank": 1,
+      "sources": [
+        "business-licensing.md",
+        "residency-permits.md",
+        "business-licensing.md"
+      ],
+      "scores": [
+        0.669,
+        0.615,
+        0.598
+      ]
+    },
+    {
+      "strategy": "semantic",
+      "q": "How long does a refund take if my application is rejected?",
+      "phrase_rank": 2,
+      "doc_rank": 2,
+      "sources": [
+        "residency-permits.md",
+        "nova-id-and-payments.md",
+        "residency-permits.md"
+      ],
+      "scores": [
+        0.623,
+        0.593,
+        0.592
+      ]
+    },
+    {
+      "strategy": "semantic",
+      "q": "Which sign-in level do I need to renew my permit?",
+      "phrase_rank": null,
+      "doc_rank": null,
+      "sources": [
+        "residency-permits.md",
+        "residency-permits.md",
+        "residency-permits.md"
+      ],
+      "scores": [
+        0.669,
+        0.649,
+        0.638
+      ]
+    },
+    {
+      "strategy": "hierarchical",
+      "q": "How early can I renew my residence permit?",
+      "phrase_rank": 1,
+      "doc_rank": 1,
+      "sources": [
+        "residency-permits.md"
+      ],
+      "scores": [
+        0.802
+      ]
+    },
+    {
+      "strategy": "hierarchical",
+      "q": "How early can I renew my driving licence?",
+      "phrase_rank": 2,
+      "doc_rank": 2,
+      "sources": [
+        "business-licensing.md",
+        "driving-licence.md"
+      ],
+      "scores": [
+        0.682,
+        0.68
+      ]
+    },
+    {
+      "strategy": "hierarchical",
+      "q": "What salary do I need to sponsor my mother and father?",
+      "phrase_rank": 1,
+      "doc_rank": 1,
+      "sources": [
+        "family-sponsorship.md"
+      ],
+      "scores": [
+        0.757
+      ]
+    },
+    {
+      "strategy": "hierarchical",
+      "q": "How much is the deposit for bringing my parents to live with me?",
+      "phrase_rank": 1,
+      "doc_rank": 1,
+      "sources": [
+        "family-sponsorship.md",
+        "residency-permits.md"
+      ],
+      "scores": [
+        0.606,
+        0.561
+      ]
+    },
+    {
+      "strategy": "hierarchical",
+      "q": "What is the daily fine once the grace period for my expired residence permit ends?",
+      "phrase_rank": 1,
+      "doc_rank": 1,
+      "sources": [
+        "residency-permits.md",
+        "business-licensing.md"
+      ],
+      "scores": [
+        0.768,
+        0.642
+      ]
+    },
+    {
+      "strategy": "hierarchical",
+      "q": "Is there a discount if I pay a traffic fine early?",
+      "phrase_rank": 1,
+      "doc_rank": 1,
+      "sources": [
+        "vehicles-and-fines.md",
+        "residency-permits.md"
+      ],
+      "scores": [
+        0.716,
+        0.593
+      ]
+    },
+    {
+      "strategy": "hierarchical",
+      "q": "How much does it cost to transfer a used car I bought?",
+      "phrase_rank": 1,
+      "doc_rank": 1,
+      "sources": [
+        "vehicles-and-fines.md",
+        "driving-licence.md"
+      ],
+      "scores": [
+        0.622,
+        0.54
+      ]
+    },
+    {
+      "strategy": "hierarchical",
+      "q": "I write software from my apartment with no clients visiting. What does that licence cost per year?",
+      "phrase_rank": 1,
+      "doc_rank": 1,
+      "sources": [
+        "business-licensing.md",
+        "driving-licence.md"
+      ],
+      "scores": [
+        0.673,
+        0.628
+      ]
+    },
+    {
+      "strategy": "hierarchical",
+      "q": "How long does a refund take if my application is rejected?",
+      "phrase_rank": 2,
+      "doc_rank": 2,
+      "sources": [
+        "residency-permits.md",
+        "nova-id-and-payments.md"
+      ],
+      "scores": [
+        0.59,
+        0.579
+      ]
+    },
+    {
+      "strategy": "hierarchical",
+      "q": "Which sign-in level do I need to renew my permit?",
+      "phrase_rank": null,
+      "doc_rank": null,
+      "sources": [
+        "residency-permits.md"
+      ],
+      "scores": [
+        0.675
+      ]
+    }
+  ]
+}

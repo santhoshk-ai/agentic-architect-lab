@@ -1,0 +1,28 @@
+[
+  {
+    "q": "How early can I renew my residence permit and what do I need?",
+    "expect": "up to 30 days before it expires",
+    "doc": "residency-permits.md"
+  },
+  {
+    "q": "What salary do I need to sponsor my parents?",
+    "expect": "18,000 NCD",
+    "doc": "family-sponsorship.md"
+  },
+  {
+    "q": "How do I dispute a parking fine?",
+    "expect": "within 30 days by uploading",
+    "doc": "vehicles-and-fines.md"
+  },
+  {
+    "q": "Do electric cars pay the vehicle registration fee?",
+    "expect": "exempt from the registration fee until 31 December 2027",
+    "doc": "vehicles-and-fines.md"
+  },
+  {
+    "q": "How much is a fishing licence in Nova City?",
+    "expect": null,
+    "doc": null,
+    "out_of_corpus": true
+  }
+]

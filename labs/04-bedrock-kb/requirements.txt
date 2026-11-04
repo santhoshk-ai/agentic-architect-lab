@@ -1,0 +1,3 @@
+boto3>=1.42.0        # needs the s3vectors client and S3_VECTORS KB storage type
+numpy>=1.26
+python-dotenv>=1.0
