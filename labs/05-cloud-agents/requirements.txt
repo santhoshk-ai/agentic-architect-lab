@@ -1,0 +1,6 @@
+# Main venv (blocks B, C, E, D quota check). Block A uses its own venv: see A_agentcore/requirements-mcp1.txt
+boto3>=1.43
+python-dotenv>=1.0
+openai>=2.0
+azure-identity>=1.19
+google-genai>=2.30

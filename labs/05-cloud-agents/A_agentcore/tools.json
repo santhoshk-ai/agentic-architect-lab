@@ -1,0 +1,8 @@
+[
+  {"name": "get_service_fee",
+   "description": "Fee in Nova City dollars (NCD). service: driving_licence_renewal | residency_renewal | trade_licence_renewal",
+   "inputSchema": {"type": "object", "properties": {"service": {"type": "string"}}, "required": ["service"]}},
+  {"name": "get_application_status",
+   "description": "Status of a Nova City application, e.g. APP-1002",
+   "inputSchema": {"type": "object", "properties": {"application_id": {"type": "string"}}, "required": ["application_id"]}}
+]

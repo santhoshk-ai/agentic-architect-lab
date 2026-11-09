@@ -1,0 +1,4 @@
+# SageMaker Python SDK v2 API (JumpStartEstimator). v3 changed the interface -> pin below 3 in a separate venv.
+sagemaker>=2.230,<3
+boto3>=1.43
+python-dotenv>=1.0

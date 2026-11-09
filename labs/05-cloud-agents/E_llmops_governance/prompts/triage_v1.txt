@@ -1,0 +1,2 @@
+Classify the citizen message into one intent: driving, residency, trade, complaint, other.
+Reply with JSON only: {"intent": "<intent>"}

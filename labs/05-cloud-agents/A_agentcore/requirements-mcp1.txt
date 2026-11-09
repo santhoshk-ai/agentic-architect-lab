@@ -1,0 +1,4 @@
+# AWS AgentCore Runtime MCP docs use MCP Python SDK v1 (FastMCP). labs/03 used v2 (MCPServer) -> keep a separate venv.
+mcp>=1.28.1,<2
+boto3>=1.43
+python-dotenv>=1.0

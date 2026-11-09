@@ -1,0 +1,7 @@
+{
+  "triage": {
+    "production": {"prompt_version": "triage_v1", "model": "us.amazon.nova-2-lite-v1:0", "accuracy": null,
+                   "cost_per_case_usd": null, "promoted_at": null, "approved_by": null},
+    "history": []
+  }
+}
