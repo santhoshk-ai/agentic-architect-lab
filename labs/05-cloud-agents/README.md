@@ -1,15 +1,15 @@
 # labs/05-cloud-agents: agent platforms on AWS and Azure, LLMOps and governance
 
-Closes the 5 CV tools still at **Not yet** after the 28–31 Oct sprint, plus the open Partial:
+Five blocks covering managed agent platforms, multi-provider model APIs, fine-tuning, LLMOps and AI governance:
 
-| Block | Folder | CV tool(s) | Time | Day |
-|---|---|---|---|---|
-| A | `A_agentcore/` | Bedrock **AgentCore** Runtime + Gateway (MCP, JWT); LLMOps tracing | 1h45 | Thu 5 Nov |
-| E1 | `E_llmops_governance/` steps 1–7 | **LLMOps**: token/cost tracking, prompt/model versioning + eval gate | 45m | Thu (if time) / Fri |
-| C | `C_foundry/` | **Azure OpenAI / Foundry**; OpenAI API (→ lifts *OpenAI + Anthropic APIs* from Partial) | 1h | Fri 6 Nov |
-| E2 | `E_llmops_governance/governance.md` | **Responsible AI** & AI governance (UAE AI Charter, PDPL, OWASP, NIST) | 30m | Fri |
-| B | `B_bedrock_agent/` | **Bedrock Agents** (managed loop, trace, alias versioning, HITL confirmation) | 1h | Sat 7 Nov |
-| D | `D_sagemaker/` | **SageMaker** fine-tuning (LoRA, JumpStart); Partial if no G5 quota | 30–60m | Sat |
+| Block | Folder | Covers | Time |
+|---|---|---|---|
+| A | `A_agentcore/` | Bedrock **AgentCore** Runtime + Gateway (MCP, JWT); LLMOps tracing | 1h45 |
+| E1 | `E_llmops_governance/` steps 1–7 | **LLMOps**: token/cost tracking, prompt/model versioning + eval gate | 45m |
+| C | `C_foundry/` | **Azure OpenAI / Foundry**; OpenAI API (Responses) | 1h |
+| E2 | `E_llmops_governance/governance.md` | **Responsible AI** & AI governance (UAE AI Charter, PDPL, OWASP, NIST) | 30m |
+| B | `B_bedrock_agent/` | **Bedrock Agents** (managed loop, trace, alias versioning, HITL confirmation) | 1h |
+| D | `D_sagemaker/` | **SageMaker** fine-tuning (LoRA, JumpStart); needs G5 quota | 30–60m |
 
 Each block README has: **Concept → Steps (commands + expected output) → Common errors → Done-when → Cost/teardown**.
 
@@ -24,7 +24,7 @@ python smoke_test.py                       # offline: compiles all, runs both La
 ```
 Tools: AWS CLI v2 with creds for us-east-1, `jq`, `zip`, Node 20+ (`npm i -g @aws/agentcore`), `uv`, Azure CLI (`az login`), gcloud ADC (Gemini).
 
-## Model choices (verified 5 Nov 2026 on AWS model cards / MS Learn)
+## Model choices (per AWS model cards / MS Learn)
 | Use | Model | Why |
 |---|---|---|
 | Converse tool loops, prompt A/B | `us.amazon.nova-2-lite-v1:0` | Cheap, tool calling; **geo profile only** (no in-region) |
@@ -33,14 +33,9 @@ Tools: AWS CLI v2 with creds for us-east-1, `jq`, `zip`, Node 20+ (`npm i -g @aw
 | Gemini | your labs/03 `GEMINI_MODEL`, ADC only | org policy: no API keys |
 
 ## One shared LLMOps log
-Every block appends to `usage.jsonl` (git-ignored) through `common/usage.py`, using one schema: `source, model, prompt_version, input/output tokens, latency_ms, cost_usd, tools`. Set the `PRICE_*` values in `.env` from the pricing pages to get real cost. They're left at 0 because I haven't verified today's prices. `python common/usage.py` prints the cross-block table.
+Every block appends to `usage.jsonl` (git-ignored) through `common/usage.py`, using one schema: `source, model, prompt_version, input/output tokens, latency_ms, cost_usd, tools`. Set the `PRICE_*` values in `.env` from the pricing pages to get real cost. They default to 0 (cost column shows 0). `python common/usage.py` prints the cross-block table.
 
-## Sprint scoring rule (for Saturday's scorecard)
-- **Hands-on** = that block's Done-when boxes are all ticked, with numbers in results.md.
-- **Partial** = ran part of it or blocked by quota/permissions, with the blocker written down.
-- Expected after this folder: AgentCore, Bedrock Agents, Azure Foundry, LLMOps, Responsible AI → Hands-on. SageMaker → Hands-on or Partial (quota). OpenAI + Anthropic APIs → Hands-on for OpenAI-style Responses (Foundry); Anthropic stays Partial unless you run an Anthropic model on Bedrock (Anthropic use-case form).
-
-## Teardown checklist (same day as each block)
+## Teardown checklist (after each block)
 - [ ] A: `A_agentcore/teardown.sh`: no gateways or runtimes; Lambda + role + Cognito pool gone
 - [ ] B: `python B_bedrock_agent/teardown_agent.py`
 - [ ] C: `C_foundry/teardown_foundry.sh <rg>` → `az group exists` = false

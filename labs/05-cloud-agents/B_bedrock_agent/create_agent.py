@@ -4,7 +4,7 @@ Learning points:
 - Managed agent = AWS owns the orchestration loop (ReAct-style prompts). You own instruction, tools, guardrails.
 - DRAFT -> prepare -> alias (immutable version). Alias = blue/green pointer, like a CloudFront origin group.
 - requireConfirmation=ENABLED on submit_application = built-in human-in-the-loop (agent returns control).
-- Model: amazon.nova-pro-v1:0 in-region (Nova 2 Lite does not support Agents per its model card, 5 Nov 2026).
+- Model: amazon.nova-pro-v1:0 in-region (Nova 2 Lite does not support Agents per its model card).
 Writes agent_state.json for invoke_agent.py / teardown_agent.py.
 """
 import io

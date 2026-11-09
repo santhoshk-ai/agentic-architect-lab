@@ -1,6 +1,6 @@
 # Block A: AgentCore Runtime + Gateway (MCP), ~1h45
 
-**CV tools covered:** Bedrock AgentCore (Runtime, Gateway, Identity/JWT); MCP in production; LLMOps (per-call usage log).
+**Covers:** Bedrock AgentCore (Runtime, Gateway, Identity/JWT); MCP in production; LLMOps (per-call usage log).
 
 ## Concept: Runtime runs code, Gateway holds the keys
 
@@ -53,7 +53,7 @@ MCP_URL="$GATEWAY_URL" python client_check.py
 #  expect TOOLS with the target prefix, e.g. ['NovaLambda___get_application_status', 'NovaLambda___get_service_fee', ...]
 ```
 
-**A6. Stretch (~20m), the interview story: Runtime MCP server as a Gateway `mcp-server` target.**
+**A6. Stretch (~20m): Runtime MCP server as a Gateway `mcp-server` target.**
 The Runtime requires a JWT, so the target needs **outbound OAuth client credentials**:
 1. Create a Cognito app client *with a secret*, plus a resource server and scope: `source setup_cognito_client_auth.sh` (after `setup_cognito.sh`). It also adds the pool's hosted domain, because client-credentials tokens are only issued at its `/oauth2/token`, and exports `M2M_CLIENT_ID`, `M2M_CLIENT_SECRET`, `M2M_SCOPE` (`nova-mcp/invoke`), `TOKEN_URL` and a test `M2M_TOKEN`.
 2. Add that client ID to the Runtime's `allowedClients`, then redeploy.
@@ -78,7 +78,7 @@ python ../common/usage.py                                                   # pe
 aws logs tail /aws/bedrock-agentcore/gateways/$GATEWAY_ID --since 15m       # Gateway-side view
 ```
 
-**A8. Teardown (10m), today:** run `./teardown.sh`. Expect both verify lists to be empty.
+**A8. Teardown (10m):** run `./teardown.sh`. Expect both verify lists to be empty.
 
 ## Common errors
 | Symptom | Cause / fix |

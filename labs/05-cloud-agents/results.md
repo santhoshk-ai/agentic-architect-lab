@@ -1,6 +1,6 @@
 # labs/05-cloud-agents: results
 
-Date(s): A on 2026-11-06 (first deploy) and 2026-11-09 (redeploy, Gateway, A6, A7, teardown) · Region: us-east-1 / Azure eastus · Author: santhoshk
+Region: us-east-1 / Azure eastus
 
 ## A: AgentCore
 agentcore CLI 1.0.1, MCP server `main.py` (stateless streamable HTTP), Cognito user pool + `CUSTOM_JWT` with `allowedClients`, model `us.amazon.nova-2-lite-v1:0`. Observed, not expected.
@@ -11,7 +11,7 @@ agentcore CLI 1.0.1, MCP server `main.py` (stateless streamable HTTP), Cognito u
   content-type: application/json
   x-amzn-errortype: MissingAuthenticationTokenException
   ```
-  Same result on both days. No `WWW-Authenticate` header came back, unlike the README's expectation. The rejection happens at the AgentCore front door before the container sees the request, and the runtime logs show no request.
+  Same result on every run. No `WWW-Authenticate` header came back, unlike the README's expectation. The rejection happens at the AgentCore front door before the container sees the request, and the runtime logs show no request.
 - Runtime tools/list with token: `TOOLS: ['get_service_fee', 'get_application_status']`; `CALL: get_service_fee -> {"service": "residency_renewal", "fee_ncd": 500, "source": "fee-schedule-v3 (synthetic)"}`. This matches local A1. The runtime log shows exactly 1 ListTools + 1 CallTool per run, plus about 30 PingRequest/min health checks while the session stays warm (about 15 min).
 - Gateway tool names: `['NovaLambda___get_application_status', 'NovaLambda___get_service_fee']`; `CALL: NovaLambda___get_service_fee -> {"service":"residency_renewal","fee_ncd":500}`. The Lambda version has no `source` field, which shows the Gateway serves the Lambda copy of the tool, not the Runtime copy.
 - gateway_agent runs (question → tools called → answer → turns), from `usage.jsonl`:
@@ -25,11 +25,11 @@ agentcore CLI 1.0.1, MCP server `main.py` (stateless streamable HTTP), Cognito u
   - Root cause: `RUNTIME_URL` was empty. `runtime_env.sh` was sourced from `NovaMcp/` in zsh, where `BASH_SOURCE` is empty, so it looked for `./status_runtime.json` in the wrong folder. This is now fixed: it falls back to `$0`.
   - The Runtime logs show no Gateway-originated `initialize`/ListTools afterwards, so the Gateway → Runtime OAuth hop was never proven, and the A7 runs used only the `NovaLambda___*` tools.
   - Lesson: the Gateway validates an MCP target synchronously at create time (an initialize handshake), so a bad endpoint fails the CloudFormation deploy rather than a later tool call.
-- Teardown verified: ☑ 2026-11-09. `list-gateways` and `list-agent-runtimes` are empty. Stack `AgentCore-NovaMcp-default` is gone, as are Lambda `nova-tools`, role `nova-tools-lambda-role`, and the A2–A6 user pool (with domain and M2M client).
-  - Leftovers to delete by hand: the orphan pool from the first `setup_cognito.sh` run, and log groups `/aws/bedrock-agentcore/runtimes/NovaMcp_default_NovaTools-*` and `/aws/lambda/nova-tools`.
+- Teardown verified: ☑ `list-gateways` and `list-agent-runtimes` are empty. Stack `AgentCore-NovaMcp-default` is gone, as are Lambda `nova-tools`, role `nova-tools-lambda-role`, and the A2–A6 user pool (with domain and M2M client).
+  - `teardown.sh` now also deletes the `/aws/lambda/nova-tools` and `/aws/bedrock-agentcore/runtimes/NovaMcp_*` log groups. Re-running `setup_cognito.sh` creates a new pool each time, so delete any extra pools.
   - The ECR repo `cdk-<qualifier>-container-assets-*` belongs to the shared CDK bootstrap, so keep it.
 
-**Gotchas hit (for the interview story):**
+**Gotchas hit:**
 - **CDK bootstrap qualifier:** the account is bootstrapped with a custom qualifier, but the CLI-generated CDK app assumes `hnb659fds`, which causes AssumeRole AccessDenied and `SSM /cdk-bootstrap/hnb659fds/version not found`. Fix: set `@aws-cdk/core:bootstrapQualifier` in `NovaMcp/agentcore/cdk/cdk.json`. Don't re-bootstrap a shared account.
 - **CLI 1.x syntax:** `add gateway` and `add gateway-target` take JSON (`--authorizer-configuration`, `--target-configuration`), and `--discovery-url` and `--type mcp-server` are gone. An MCP gateway can't take a `--runtime` target, so use `--endpoint`. OAuth secrets go into `add credentials oauth` on stdin and land in the git-ignored `agentcore/.env.local`.
 - **Cognito access tokens:** these have `client_id` and no `aud`, so authorize with `allowedClients`. Client-credentials tokens need a hosted domain's `/oauth2/token` plus a resource-server scope.
@@ -64,6 +64,3 @@ agentcore CLI 1.0.1, MCP server `main.py` (stateless streamable HTTP), Cognito u
 - Gate decisions: v2 ___ ; v3 ___ (reason)
 - Cross-block usage table (`python common/usage.py`):
 - governance.md: ✅ rows ___ / 12 ; top 3 gaps:
-
-## Sprint status after this folder
-AgentCore ___ · Bedrock Agents ___ · Azure OpenAI/Foundry ___ · SageMaker FT ___ · LLMOps ___ · Responsible AI ___ · OpenAI+Anthropic APIs ___

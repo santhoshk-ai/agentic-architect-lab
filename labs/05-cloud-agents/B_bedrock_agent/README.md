@@ -1,6 +1,6 @@
 # Block B: Bedrock Agents (managed orchestration) with trace and human approval, ~1h
 
-**CV tools covered:** Amazon Bedrock Agents (closes the "Bedrock Agents + AgentCore" row together with Block A); multi-step tool use; HITL.
+**Covers:** Amazon Bedrock Agents; multi-step tool use; HITL.
 
 ## Concept: who owns the loop?
 
@@ -14,7 +14,7 @@
 
 **OTT analogy:** Bedrock Agents is a managed transcoding preset. You choose the ladder (instruction, tools) and AWS runs the pipeline. AgentCore is running your own encoder on managed compute.
 
-**Model choice is a constraint, not a preference.** Nova 2 Lite's model card lists *Agents: not supported*. Nova Pro (`amazon.nova-pro-v1:0`) supports Agents and runs in-region in us-east-1, so the agent role only needs `bedrock:InvokeModel` on one model ARN (no cross-region profile permissions). Side note for sovereignty interviews: the same model card lists Nova Pro as **in-region in me-central-1 (UAE)**.
+**Model choice is a constraint, not a preference.** Nova 2 Lite's model card lists *Agents: not supported*. Nova Pro (`amazon.nova-pro-v1:0`) supports Agents and runs in-region in us-east-1, so the agent role only needs `bedrock:InvokeModel` on one model ARN (no cross-region profile permissions). Data-residency note: the same model card lists Nova Pro as **in-region in me-central-1 (UAE)**.
 
 ## Steps (main venv at lab root: `pip install -r ../requirements.txt`)
 

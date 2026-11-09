@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # Creates RG -> Foundry resource (AIServices, project management on) -> project -> gpt-5-mini deployment -> Foundry User role.
-# Commands per Microsoft Learn "Quickstart: create Foundry resources" (checked 5 Nov 2026).
+# Commands per Microsoft Learn "Quickstart: create Foundry resources".
 # Usage: az login ; export SUFFIX=<your initials+digits> ; ./setup_foundry.sh
 set -euo pipefail
 : "${SUFFIX:?export SUFFIX=sk123 (custom domain must be globally unique)}"

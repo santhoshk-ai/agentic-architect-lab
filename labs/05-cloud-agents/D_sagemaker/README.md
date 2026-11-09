@@ -1,6 +1,6 @@
 # Block D: SageMaker fine-tuning basics (LoRA on Llama 3.2 1B), 30–60 min
 
-**CV tool covered:** Amazon SageMaker fine-tuning. **Honest scoring:** if your G5 quota is 0, this block ends at **Partial** (quota checked, data and job prepared, concepts explained). That's fine for interviews as long as you say exactly that.
+**Covers:** Amazon SageMaker fine-tuning. If the G5 quota is 0, this block ends at **Partial**: quota checked, data and job prepared, concepts explained.
 
 ## Concept: when to fine-tune (rarely) vs RAG vs prompting
 | Need | First choice | Why |
@@ -25,7 +25,7 @@
 ## Common errors
 | Symptom | Fix |
 |---|---|
-| `ResourceLimitExceeded` | Quota 0: request an increase; score Partial meanwhile |
+| `ResourceLimitExceeded` | Quota 0: request an increase; record Partial meanwhile |
 | `CapacityError: Unable to provision requested ML compute capacity` | Retry later, or try `--instance ml.g5.4xlarge` / another Region (per the AWS blog) |
 | EULA / access error | `environment={"accept_eula": "true"}` is set; check JumpStart model access in the console |
 | `KeyError` in template | JSONL keys must match template placeholders |

@@ -2,7 +2,6 @@
 
 Learning points: one interface (ask) over three auth models (ADC / IAM SigV4 / Entra ID token), three billing
 units and three latency profiles. Each call is logged to ../usage.jsonl -> compare in common/usage.py.
-Closes the Fri 30 Oct syllabus Done-when ("one interface, multiple providers") with Azure added.
 """
 import json
 import os

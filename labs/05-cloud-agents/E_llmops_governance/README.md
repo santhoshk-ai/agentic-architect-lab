@@ -1,6 +1,6 @@
 # Block E: LLMOps (tracing, token/cost, versioning) + Responsible AI governance, ~1h15
 
-**CV tools covered:** LLMOps / MLOps (tracing, token & cost tracking, model/prompt versioning); Responsible AI & AI governance.
+**Covers:** LLMOps / MLOps (tracing, token & cost tracking, model/prompt versioning); Responsible AI & AI governance.
 
 ## Concept: treat prompts and models like deployable artifacts
 ```
@@ -11,7 +11,7 @@ prompts/triage_vN.txt ──▶ prompt_ab.py (eval on cases.json) ──▶ eval
 - **Tracing** answers *what happened* (Block A gateway logs, Block B agent trace, invocation logs).
 - **Token and cost tracking** answers *what it cost per call / per version / per provider* (usage.jsonl).
 - **Versioning plus a gate** answers *what is in production, who approved it, and on what evidence* (registry + gate). It's the same discipline as a CDN config change behind canary metrics.
-- **Governance** is written evidence that controls exist (governance.md), mapped to the UAE AI Charter's 12 principles. That's the document a government panel will actually ask you about.
+- **Governance** is written evidence that controls exist (governance.md), mapped to the UAE AI Charter's 12 principles.
 
 ## Steps (main venv)
 1. **Optional platform logging:** run `python enable_invocation_logging.py`. It's account-wide in us-east-1, so disable it at the end.

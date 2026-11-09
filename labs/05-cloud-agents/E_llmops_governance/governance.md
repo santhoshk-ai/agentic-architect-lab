@@ -27,7 +27,7 @@ LLM01 Prompt injection → row 10 · LLM02 Sensitive info disclosure → row 4 �
 
 ## Kill switch & budget (links to ADR-002/003)
 - Disable: Gateway target removal (`agentcore remove gateway-target`), Bedrock agent alias repoint, Foundry deployment delete. Write the exact command and who may run it.
-- Budget: AWS Budgets action / Azure budget alert (Week 0). Record thresholds here.
+- Budget: AWS Budgets action / Azure budget alert. Record thresholds here.
 
 ## Open gaps → backlog
 1. Arabic eval cases (row 3, 11) · 2. PII redaction before logging (row 4) · 3. UAE-resident hosting option per provider (row 12) · 4. Red-team set of 20 injections (row 10).

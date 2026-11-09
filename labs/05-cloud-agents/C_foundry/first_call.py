@@ -2,7 +2,7 @@
 
 Learning points: on Azure the *deployment name* is the model parameter (not the model ID); auth is a bearer token
 from DefaultAzureCredential with scope https://ai.azure.com/.default (pattern from Microsoft Learn
-"Generate responses", checked 5 Nov 2026). Same Responses API as OpenAI, so the code is portable across both.
+"Generate responses"). Same Responses API as OpenAI, so the code is portable across both.
 """
 import os
 import sys

@@ -2,7 +2,7 @@
 
 Rule (edit to taste, but write it down. In government, the rule IS the governance):
   candidate.accuracy >= production.accuracy  AND  cost_per_case <= COST_TOLERANCE x production  AND  no PARSE_ERROR
-  python promote_gate.py triage_v2 [--model <id>] [--approver "Santhosh"] [--dry-run]
+  python promote_gate.py triage_v2 [--model <id>] [--approver "<name>"] [--dry-run]
 """
 import argparse
 import datetime as dt
