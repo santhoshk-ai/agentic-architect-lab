@@ -10,6 +10,14 @@
 - **Data residency:** the deployment type decides where inference runs. GlobalStandard can route anywhere, so pick a regional or data-zone deployment when data must stay in-region.
 
 ## Steps
+0. **Python env:** Block C uses the shared main venv, not Block A's `.venv-mcp1`. The packages come from `../requirements.txt` (`openai`, `azure-identity`, `google-genai`, `python-dotenv`, `boto3`). Azure CLI must be 2.7x or newer, because 2.2x has no `--allow-project-management` or `account project` commands.
+   ```bash
+   deactivate 2>/dev/null; cd ..                      # labs/05-cloud-agents
+   python3 -m venv .venv && source .venv/bin/activate && pip install -r requirements.txt
+   cd C_foundry
+   az version --query '"azure-cli"' -o tsv            # upgrade if < 2.70: brew upgrade azure-cli, or uv tool install azure-cli
+   ```
+   Error `ModuleNotFoundError: No module named 'azure'` means the wrong venv is active.
 1. `az login`, then `export SUFFIX=<initials+digits>` and `./setup_foundry.sh` (~5 min). Copy `FOUNDRY_PROJECT_ENDPOINT` into `../.env`.
    - `DeploymentModelNotSupported`: the model/version/SKU isn't in the region. Try `LOC=eastus2` or check the Foundry model catalog.
    - `CustomDomainInUse`: change SUFFIX.

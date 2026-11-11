@@ -1,7 +1,38 @@
 {
   "triage": {
-    "production": {"prompt_version": "triage_v1", "model": "us.amazon.nova-2-lite-v1:0", "accuracy": null,
-                   "cost_per_case_usd": null, "promoted_at": null, "approved_by": null},
-    "history": []
+    "production": {
+      "prompt_version": "triage_v2",
+      "model": "us.amazon.nova-2-lite-v1:0",
+      "accuracy": 0.917,
+      "cost_per_case_usd": 0.0,
+      "promoted_at": "2026-11-10T13:19:36+00:00",
+      "approved_by": "santhosh"
+    },
+    "history": [
+      {
+        "prompt_version": "triage_v1",
+        "model": "us.amazon.nova-2-lite-v1:0",
+        "accuracy": null,
+        "cost_per_case_usd": null,
+        "promoted_at": null,
+        "approved_by": null
+      },
+      {
+        "prompt_version": "triage_v2",
+        "model": "us.amazon.nova-2-lite-v1:0",
+        "accuracy": 0.917,
+        "cost_per_case_usd": 0.0,
+        "promoted_at": "2026-11-10T13:14:41+00:00",
+        "approved_by": "lab-owner"
+      },
+      {
+        "prompt_version": "triage_v2",
+        "model": "us.amazon.nova-2-lite-v1:0",
+        "accuracy": 0.917,
+        "cost_per_case_usd": 0.0,
+        "promoted_at": "2026-11-10T13:18:34+00:00",
+        "approved_by": "lab-owner"
+      }
+    ]
   }
 }
